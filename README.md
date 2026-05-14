@@ -1,10 +1,10 @@
-# 🔥 Autonomous Fire-Fighting Robot
+# Autonomous Fire-Fighting Robot
 
 > An Arduino-based robot that autonomously scans its environment for fire, identifies the direction of the flame, aims a water pump at it, and extinguishes it — all without human intervention.
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project was developed during my **SIWES (Students' Industrial Work Experience Scheme)** internship at **Hub360 Circuits Ltd, Abuja, Nigeria**. It demonstrates the integration of embedded systems, servo motor control, sensor interfacing, and basic autonomous decision-making on a microcontroller platform.
 
@@ -12,7 +12,7 @@ The robot continuously scans its surroundings using a flame sensor mounted on a 
 
 ---
 
-## 🎯 Objectives
+## Objectives
 
 - Design a low-cost, autonomous fire detection and suppression system
 - Implement servo-based directional scanning for 360° situational awareness (within a configurable arc)
@@ -22,7 +22,7 @@ The robot continuously scans its surroundings using a flame sensor mounted on a 
 
 ---
 
-## 🧰 Components & Hardware
+## Components & Hardware
 
 | Component | Quantity | Purpose |
 |---|---|---|
@@ -39,7 +39,7 @@ The robot continuously scans its surroundings using a flame sensor mounted on a 
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 The system operates as a **finite state machine (FSM)** with two primary states:
 
@@ -52,7 +52,7 @@ The system operates as a **finite state machine (FSM)** with two primary states:
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                      STATE 1: SCAN MODE                         │
-│  • Scan servo sweeps from 10° → 170° and back in 5° steps      │
+│  • Scan servo sweeps from 10° → 170° and back in 5° steps       │
 │  • Flame sensor polled at each position                         │
 │  • Sensor reads LOW = fire detected                             │
 └────────────────────────────┬────────────────────────────────────┘
@@ -65,7 +65,7 @@ The system operates as a **finite state machine (FSM)** with two primary states:
 │                   STATE 2: EXTINGUISH MODE                      │
 │  • Record angle of detection                                    │
 │  • Aim pump servo to same angle                                 │
-│  • Activate relay → pump ON for 3 seconds                      │
+│  • Activate relay → pump ON for 3 seconds                       │
 │  • Re-check sensor after pump stops                             │
 │  • If fire gone → return to SCAN MODE                           │
 │  • If fire remains → continue pumping                           │
@@ -99,7 +99,7 @@ The system operates as a **finite state machine (FSM)** with two primary states:
 
 ---
 
-## 💻 Software & Code
+## Software & Code
 
 **Language:** C++ (Arduino)  
 **IDE:** Arduino IDE 2.x  
@@ -120,7 +120,7 @@ The full source code is available in [`fire_fighting_robot.ino`](./fire_fighting
 
 ---
 
-## 📊 Results & Observations
+## Results & Observations
 
 | Test Condition | Outcome |
 |---|---|
@@ -136,7 +136,7 @@ The full source code is available in [`fire_fighting_robot.ino`](./fire_fighting
 
 ---
 
-## 🔧 Setup & Replication
+## Setup & Replication
 
 1. Wire all components according to the pin assignments table above
 2. Clone this repository:
@@ -161,27 +161,27 @@ The full source code is available in [`fire_fighting_robot.ino`](./fire_fighting
 
 ---
 
-## 📅 Project Context
+## Project Context
 
 | Detail | Info |
 |---|---|
 | Programme | SIWES (Industrial Training) |
 | Organization | Hub360 Circuits Ltd, Abuja, Nigeria |
-| Year | 2023/2024 |
+| Year | 2024/2025 |
 | Developer | Raphael Ebubechi Efita |
 | Institution | Federal University of Technology, Minna |
 | Department | Mechatronics Engineering |
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.  
 Feel free to use, modify, and build upon this work with attribution.
 
 ---
 
-## 🤝 Connect
+## Connect
 
 **Raphael Ebubechi Efita**  
 Mechatronics Engineering | Embedded Systems | IoT  
