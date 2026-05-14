@@ -44,7 +44,32 @@ Note: All components share a common ground (GND) to ensure stable signal communi
 The system operates as a **finite state machine (FSM)** with two primary states:
 
 ```
-![FSM Flowchart](Block_Diagram.png)
+┌─────────────────────────────────────────────────────────────────┐
+│                         SYSTEM START                            │
+│               Servos initialized, pump OFF                      │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                      STATE 1: SCAN MODE                         │
+│  • Scan servo sweeps from 10° → 170° and back in 5° steps      │
+│  • Flame sensor polled at each position                         │
+│  • Sensor reads LOW = fire detected                             │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                     Fire Detected?
+                      (LOW signal)
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                   STATE 2: EXTINGUISH MODE                      │
+│  • Record angle of detection                                    │
+│  • Aim pump servo to same angle                                 │
+│  • Activate relay → pump ON for 3 seconds                      │
+│  • Re-check sensor after pump stops                             │
+│  • If fire gone → return to SCAN MODE                           │
+│  • If fire remains → continue pumping                           │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ### Pin Assignments
