@@ -1,12 +1,12 @@
 # Autonomous Fire-Fighting Robot
 
-> An Arduino-based robot that autonomously scans its environment for fire, identifies the direction of the flame, aims a water pump at it, and extinguishes it — all without human intervention.
+> An Arduino-based robot that autonomously scans its environment for fire, identifies the direction of the flame, aims a water pump at it, and extinguishes it all without human intervention.
 
 ---
 
 ## Project Overview
 
-This project was developed during my **SIWES (Students' Industrial Work Experience Scheme)** internship at **Hub360 Circuits Ltd, Abuja, Nigeria**. It demonstrates the integration of embedded systems, servo motor control, sensor interfacing, and basic autonomous decision-making on a microcontroller platform.
+This project was developed during my **SIWES (Students' Industrial Work Experience Scheme - Nigeria's national internship program)** internship at **Hub360 Circuits Ltd, Abuja, Nigeria**. It demonstrates the integration of embedded systems, servo motor control, sensor interfacing, and basic autonomous decision-making on a microcontroller platform.
 
 The robot continuously scans its surroundings using a flame sensor mounted on a rotating servo. Upon detecting fire, it locks onto the direction, aims a second servo-mounted water pump nozzle at the source, and activates a relay-controlled pump to dispense water. After extinguishing the fire, it resumes scanning automatically.
 
@@ -36,7 +36,7 @@ The robot continuously scans its surroundings using a flame sensor mounted on a 
 | Silicone tubing | - | Channels water from pump to nozzle |
 | Jumper wires, breadboard | - | Wiring and prototyping |
 | 9V / USB Power Supply | 1 | Powers the Arduino and peripherals |
-
+Note: All components share a common ground (GND) to ensure stable signal communication between the sensors, servos, and the Arduino.
 ---
 
 ## System Architecture
